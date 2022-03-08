@@ -1,0 +1,20 @@
+﻿
+@{
+    ViewBag.Title = "but";
+    Layout = "~/Views/_LayoutPage2.cshtml";
+}
+
+<h2>but</h2>
+<hr />
+@{ WebGrid wbgrid = new WebGrid(source: Model, rowsPerPage: 5); }
+
+@wbgrid.GetHtml(
+    tableStyle: "table",
+    htmlAttributes: new { @Id = "wbgrid" },
+    columns: wbgrid.Columns(wbgrid.Column("Id", "id"), 
+    wbgrid.Column("Reg", "username")
+   ))
+
+   
+    //wbgrid.Column("password", "password"))
+
